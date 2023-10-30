@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		F6A50ECD2AEF828600B1F7B1 /* CollectionViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A50ECC2AEF828600B1F7B1 /* CollectionViewTableViewCell.swift */; };
+		F6A50ED02AEFAB4800B1F7B1 /* HeroHeaderUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A50ECF2AEFAB4800B1F7B1 /* HeroHeaderUIView.swift */; };
+		F6A50ED32AEFB28600B1F7B1 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F6A50ED22AEFB28600B1F7B1 /* SnapKit */; };
 		F6F033082AEBDF88002038F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F033072AEBDF88002038F5 /* AppDelegate.swift */; };
 		F6F0330A2AEBDF88002038F5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F033092AEBDF88002038F5 /* SceneDelegate.swift */; };
 		F6F0330C2AEBDF88002038F5 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F0330B2AEBDF88002038F5 /* MainTabBarController.swift */; };
@@ -41,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		F6A50ECC2AEF828600B1F7B1 /* CollectionViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewTableViewCell.swift; sourceTree = "<group>"; };
+		F6A50ECF2AEFAB4800B1F7B1 /* HeroHeaderUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroHeaderUIView.swift; sourceTree = "<group>"; };
 		F6F033042AEBDF88002038F5 /* NetflixClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetflixClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6F033072AEBDF88002038F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6F033092AEBDF88002038F5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6A50ED32AEFB28600B1F7B1 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				F6A50ECC2AEF828600B1F7B1 /* CollectionViewTableViewCell.swift */,
+				F6A50ECF2AEFAB4800B1F7B1 /* HeroHeaderUIView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -219,6 +224,9 @@
 			dependencies = (
 			);
 			name = NetflixClone;
+			packageProductDependencies = (
+				F6A50ED22AEFB28600B1F7B1 /* SnapKit */,
+			);
 			productName = NetflixClone;
 			productReference = F6F033042AEBDF88002038F5 /* NetflixClone.app */;
 			productType = "com.apple.product-type.application";
@@ -291,6 +299,9 @@
 				Base,
 			);
 			mainGroup = F6F032FB2AEBDF88002038F5;
+			packageReferences = (
+				F6A50ED12AEFB28600B1F7B1 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = F6F033052AEBDF88002038F5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -336,6 +347,7 @@
 				F6F0333D2AEEE5A0002038F5 /* SearchViewController.swift in Sources */,
 				F6F0330C2AEBDF88002038F5 /* MainTabBarController.swift in Sources */,
 				F6A50ECD2AEF828600B1F7B1 /* CollectionViewTableViewCell.swift in Sources */,
+				F6A50ED02AEFAB4800B1F7B1 /* HeroHeaderUIView.swift in Sources */,
 				F6F0333F2AEEE614002038F5 /* DownloadsViewController.swift in Sources */,
 				F6F033082AEBDF88002038F5 /* AppDelegate.swift in Sources */,
 				F6F0333B2AEEE545002038F5 /* UpcommingViewController.swift in Sources */,
@@ -674,6 +686,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F6A50ED12AEFB28600B1F7B1 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F6A50ED22AEFB28600B1F7B1 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F6A50ED12AEFB28600B1F7B1 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F6F032FC2AEBDF88002038F5 /* Project object */;
 }

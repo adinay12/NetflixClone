@@ -12,7 +12,8 @@ class HomeViewController: UIViewController {
     private lazy var homeFeedTable: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.register(CollectionViewTableViewCell.self, forCellReuseIdentifier:CollectionViewTableViewCell.id)
-        tableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 340))
+        let headerView = HeroHeaderUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 400))
+        tableView.tableHeaderView = headerView
         tableView.delegate = self
         tableView.dataSource = self
         return tableView
