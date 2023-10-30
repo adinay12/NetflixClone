@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F6A50ECD2AEF828600B1F7B1 /* CollectionViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A50ECC2AEF828600B1F7B1 /* CollectionViewTableViewCell.swift */; };
 		F6F033082AEBDF88002038F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F033072AEBDF88002038F5 /* AppDelegate.swift */; };
 		F6F0330A2AEBDF88002038F5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F033092AEBDF88002038F5 /* SceneDelegate.swift */; };
 		F6F0330C2AEBDF88002038F5 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F0330B2AEBDF88002038F5 /* MainTabBarController.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F6A50ECC2AEF828600B1F7B1 /* CollectionViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewTableViewCell.swift; sourceTree = "<group>"; };
 		F6F033042AEBDF88002038F5 /* NetflixClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetflixClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6F033072AEBDF88002038F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6F033092AEBDF88002038F5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +84,61 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F6A50EC62AEF81A800B1F7B1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F6A50ECC2AEF828600B1F7B1 /* CollectionViewTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F6A50EC72AEF81B800B1F7B1 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		F6A50EC82AEF81D400B1F7B1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F6A50EC92AEF820100B1F7B1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F6F033122AEBDF89002038F5 /* LaunchScreen.storyboard */,
+				F6F033102AEBDF89002038F5 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F6A50ECA2AEF821700B1F7B1 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		F6A50ECB2AEF823700B1F7B1 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				F6F033092AEBDF88002038F5 /* SceneDelegate.swift */,
+				F6F033072AEBDF88002038F5 /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		F6A50ECE2AEF846800B1F7B1 /* MainTabBArController */ = {
+			isa = PBXGroup;
+			children = (
+				F6F0330B2AEBDF88002038F5 /* MainTabBarController.swift */,
+			);
+			path = MainTabBArController;
+			sourceTree = "<group>";
+		};
 		F6F032FB2AEBDF88002038F5 = {
 			isa = PBXGroup;
 			children = (
@@ -105,12 +162,14 @@
 		F6F033062AEBDF88002038F5 /* NetflixClone */ = {
 			isa = PBXGroup;
 			children = (
+				F6A50ECB2AEF823700B1F7B1 /* Application */,
+				F6A50ECA2AEF821700B1F7B1 /* Managers */,
+				F6A50EC92AEF820100B1F7B1 /* Resources */,
+				F6A50EC82AEF81D400B1F7B1 /* Models */,
+				F6A50EC62AEF81A800B1F7B1 /* Views */,
+				F6A50EC72AEF81B800B1F7B1 /* ViewModels */,
 				F6F033372AEEE210002038F5 /* Controllers */,
-				F6F033072AEBDF88002038F5 /* AppDelegate.swift */,
-				F6F033092AEBDF88002038F5 /* SceneDelegate.swift */,
-				F6F0330B2AEBDF88002038F5 /* MainTabBarController.swift */,
-				F6F033102AEBDF89002038F5 /* Assets.xcassets */,
-				F6F033122AEBDF89002038F5 /* LaunchScreen.storyboard */,
+				F6A50ECE2AEF846800B1F7B1 /* MainTabBArController */,
 				F6F033152AEBDF89002038F5 /* Info.plist */,
 			);
 			path = NetflixClone;
@@ -276,6 +335,7 @@
 			files = (
 				F6F0333D2AEEE5A0002038F5 /* SearchViewController.swift in Sources */,
 				F6F0330C2AEBDF88002038F5 /* MainTabBarController.swift in Sources */,
+				F6A50ECD2AEF828600B1F7B1 /* CollectionViewTableViewCell.swift in Sources */,
 				F6F0333F2AEEE614002038F5 /* DownloadsViewController.swift in Sources */,
 				F6F033082AEBDF88002038F5 /* AppDelegate.swift in Sources */,
 				F6F0333B2AEEE545002038F5 /* UpcommingViewController.swift in Sources */,
