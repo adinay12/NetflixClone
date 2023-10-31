@@ -14,7 +14,7 @@ class HeroHeaderUIView: UIView {
         let button = UIButton()
         button.setTitle("Download", for: .normal)
         button.layer.borderColor = UIColor.black.cgColor
-        button.layer.borderWidth = 1
+        button.layer.borderWidth = 2
         button.layer.cornerRadius = 6
         return button
     }()
@@ -23,7 +23,7 @@ class HeroHeaderUIView: UIView {
         let button = UIButton()
         button.setTitle("Play", for: .normal)
         button.layer.borderColor = UIColor.black.cgColor
-        button.layer.borderWidth = 1
+        button.layer.borderWidth = 2
         button.layer.cornerRadius = 6
         return button
     }()
@@ -52,7 +52,7 @@ class HeroHeaderUIView: UIView {
         addGradient()
         addSubview(playButton)
         addSubview(downloadButton)
-       setupConstraints()
+        setupConstraints()
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
