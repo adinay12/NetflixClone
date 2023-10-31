@@ -26,7 +26,7 @@ class HomeViewController: UIViewController {
         view.backgroundColor  = .black
         view.addSubview(homeFeedTable)
         configurNavBar()
-        getTrendingMovies()
+        fetchData()
     }
     
     private func configurNavBar() {
@@ -49,15 +49,33 @@ class HomeViewController: UIViewController {
     
     // MARK: - Запрос это функция
     
-    private func getTrendingMovies() {
-        APICaller.shared.getTrendingMovies { result in
-            switch result {
-            case .success(let movies):
-                print(movies)
-            case .failure(let error):
-                print(error)
-            }
+    private func fetchData() {
+        
+//        APICaller.shared.getTrendingMovies { result in
+//            switch result {
+//            case .success(let movies):
+//                print(movies)
+//            case .failure(let error):
+//                print(error)
+//            }
+//        }
+        
+//        APICaller.shared.getTrendingTvs { results in
+//
+//        }
+        
+//        APICaller.shared.getUpcomingMovies { _ in
+//
+//        }
+        
+//        APICaller.shared.getPopular { _ in
+//
+//        }
+        
+        APICaller.shared.getTopRated { _ in
+            
         }
+        
     }
 }
 

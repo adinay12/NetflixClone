@@ -1,5 +1,5 @@
 //
-//  Extensions+String.swift
+//  Extension+String.swift
 //  NetflixClone
 //
 //  Created by Adinay on 31/10/23.
