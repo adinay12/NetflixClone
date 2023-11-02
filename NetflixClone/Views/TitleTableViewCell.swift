@@ -21,12 +21,14 @@ class TitleTableViewCell: UITableViewCell {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
+        label.numberOfLines = 0
         return label
     }()
     
     private lazy var titlePosterImage: UIImageView = {
         let image = UIImageView()
         image.contentMode = .scaleAspectFill
+        image.clipsToBounds = true
         return image
     }()
     
@@ -36,14 +38,13 @@ class TitleTableViewCell: UITableViewCell {
         contentView.addSubview(titleLabel)
         contentView.addSubview(playTitleButton)
         setupConstraints()
-        
     }
     
     private func setupConstraints() {
         titlePosterImage.snp.makeConstraints { make in
             make.top.equalTo(contentView.snp.top).offset(54)
             make.leading.equalTo(contentView.snp.leading)
-            make.bottom.equalTo(contentView.snp.bottom).offset(-20)
+            make.bottom.equalTo(contentView.snp.bottom).offset(-10)
             make.width.equalTo(100)
         }
         
@@ -62,8 +63,6 @@ class TitleTableViewCell: UITableViewCell {
         guard let url = URL(string: "https://image.tmdb.org/t/p/w500/\(model.posterUrl)") else {
             return
         }
-        
-        
         titlePosterImage.sd_setImage(with: url, completed: nil)
         titleLabel.text = model.titleName
     }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class UpcommingViewController: UIViewController {
     
@@ -14,6 +15,7 @@ class UpcommingViewController: UIViewController {
     private lazy var upComingTableView: UITableView = {
         let tableView = UITableView()
         tableView.register(TitleTableViewCell.self, forCellReuseIdentifier: TitleTableViewCell.id)
+        tableView.frame = view.bounds
         tableView.delegate = self
         tableView.dataSource = self
         return tableView
@@ -27,12 +29,22 @@ class UpcommingViewController: UIViewController {
         navigationController?.navigationItem.largeTitleDisplayMode = .always
         view.addSubview(upComingTableView)
         fetchUpcoming()
+        setupConstrains()
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        upComingTableView.frame = view.bounds
+  
+    private func setupConstrains() {
+        upComingTableView.snp.makeConstraints { make in
+            make.top.bottom.equalToSuperview()
+            make.leading.trailing.equalToSuperview()
+        }
     }
+        
+    
+//    override func viewDidLayoutSubviews() {
+//        super.viewDidLayoutSubviews()
+//        upComingTableView.frame = view.bounds
+//    }
     
     private func fetchUpcoming() {
         APICaller.shared.getPopular { [ weak self ]  result in
@@ -68,6 +80,6 @@ extension UpcommingViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
+        return 144
     }
 }

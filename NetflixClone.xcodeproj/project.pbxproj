@@ -19,6 +19,7 @@
 		F6A50EE42AF16ADE00B1F7B1 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F6A50EE32AF16ADE00B1F7B1 /* SDWebImageMapKit */; };
 		F6A50EE62AF23F0100B1F7B1 /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A50EE52AF23F0100B1F7B1 /* TitleTableViewCell.swift */; };
 		F6A50EE82AF2BD6800B1F7B1 /* TitleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A50EE72AF2BD6800B1F7B1 /* TitleViewModel.swift */; };
+		F6BEDB592AF3C7EF0026732D /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BEDB582AF3C7EF0026732D /* SearchResultsViewController.swift */; };
 		F6F033082AEBDF88002038F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F033072AEBDF88002038F5 /* AppDelegate.swift */; };
 		F6F0330A2AEBDF88002038F5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F033092AEBDF88002038F5 /* SceneDelegate.swift */; };
 		F6F0330C2AEBDF88002038F5 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F0330B2AEBDF88002038F5 /* MainTabBarController.swift */; };
@@ -60,6 +61,7 @@
 		F6A50EDE2AF167D000B1F7B1 /* TitleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCollectionViewCell.swift; sourceTree = "<group>"; };
 		F6A50EE52AF23F0100B1F7B1 /* TitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
 		F6A50EE72AF2BD6800B1F7B1 /* TitleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewModel.swift; sourceTree = "<group>"; };
+		F6BEDB582AF3C7EF0026732D /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		F6F033042AEBDF88002038F5 /* NetflixClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetflixClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6F033072AEBDF88002038F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6F033092AEBDF88002038F5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -176,6 +178,25 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		F6BEDB5A2AF3C82C0026732D /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				F6F033382AEEE4D2002038F5 /* HomeViewController.swift */,
+				F6F0333A2AEEE545002038F5 /* UpcommingViewController.swift */,
+				F6F0333C2AEEE5A0002038F5 /* SearchViewController.swift */,
+				F6F0333E2AEEE614002038F5 /* DownloadsViewController.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		F6BEDB5B2AF3C84A0026732D /* General */ = {
+			isa = PBXGroup;
+			children = (
+				F6BEDB582AF3C7EF0026732D /* SearchResultsViewController.swift */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
 		F6F032FB2AEBDF88002038F5 = {
 			isa = PBXGroup;
 			children = (
@@ -233,10 +254,8 @@
 		F6F033372AEEE210002038F5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				F6F033382AEEE4D2002038F5 /* HomeViewController.swift */,
-				F6F0333A2AEEE545002038F5 /* UpcommingViewController.swift */,
-				F6F0333C2AEEE5A0002038F5 /* SearchViewController.swift */,
-				F6F0333E2AEEE614002038F5 /* DownloadsViewController.swift */,
+				F6BEDB5B2AF3C84A0026732D /* General */,
+				F6BEDB5A2AF3C82C0026732D /* Core */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -381,6 +400,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6F0333D2AEEE5A0002038F5 /* SearchViewController.swift in Sources */,
+				F6BEDB592AF3C7EF0026732D /* SearchResultsViewController.swift in Sources */,
 				F6F0330C2AEBDF88002038F5 /* MainTabBarController.swift in Sources */,
 				F6A50ECD2AEF828600B1F7B1 /* CollectionViewTableViewCell.swift in Sources */,
 				F6A50ED52AF0F89C00B1F7B1 /* APICaller.swift in Sources */,
@@ -493,7 +513,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -547,7 +567,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
