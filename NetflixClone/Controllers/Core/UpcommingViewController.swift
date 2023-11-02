@@ -15,7 +15,7 @@ class UpcommingViewController: UIViewController {
     private lazy var upComingTableView: UITableView = {
         let tableView = UITableView()
         tableView.register(TitleTableViewCell.self, forCellReuseIdentifier: TitleTableViewCell.id)
-        tableView.frame = view.bounds
+//        tableView.frame = view.bounds
         tableView.delegate = self
         tableView.dataSource = self
         return tableView
@@ -30,6 +30,7 @@ class UpcommingViewController: UIViewController {
         view.addSubview(upComingTableView)
         fetchUpcoming()
         setupConstrains()
+        upComingTableView.frame = view.bounds
     }
     
   
@@ -80,6 +81,6 @@ extension UpcommingViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 144
+        return 204
     }
 }

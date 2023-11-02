@@ -45,7 +45,7 @@ class TitleTableViewCell: UITableViewCell {
             make.top.equalTo(contentView.snp.top).offset(54)
             make.leading.equalTo(contentView.snp.leading)
             make.bottom.equalTo(contentView.snp.bottom).offset(-10)
-            make.width.equalTo(100)
+            make.width.equalTo(130)
         }
         
         titleLabel.snp.makeConstraints { make in
