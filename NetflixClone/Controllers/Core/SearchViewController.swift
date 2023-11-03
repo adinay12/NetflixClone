@@ -92,6 +92,28 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 110
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let tittle = titles[indexPath.row]
+        
+        guard let titleName = tittle.original_title ?? tittle.orginal_name else { return  }
+        
+        APICaller.shared.getMovie(witch: titleName) { [weak self] retult in
+            switch retult {
+            case .success(let videoElement):
+                DispatchQueue.main.async {
+                    let vc = TitlePreviewViewController()
+                    vc.configure(with: TitlePreviewViewModel(title: titleName, youTubeView: videoElement, titleOverView:tittle.overview ?? "" ))
+                    self?.navigationController?.pushViewController(vc, animated: true)
+                }
+               
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
 }
 
 
@@ -105,6 +127,9 @@ extension SearchViewController: UISearchResultsUpdating {
               let resultsController = searchController.searchResultsController as? SearchResultsViewController else {
             return
         }
+        
+        resultsController.delegete = self
+        
         
         APICaller.shared.search(with: query) { result in
             DispatchQueue.main.async {
@@ -120,3 +145,13 @@ extension SearchViewController: UISearchResultsUpdating {
     }
     }
 
+extension SearchViewController: SearchResultsViewControllerDelegate {
+    func searchResultsViewControllerDidTapItem(_ viewModel: TitlePreviewViewModel) {
+        
+        DispatchQueue.main.async { [weak self] in
+            let vc =  TitlePreviewViewController()
+            vc.configure(with: viewModel)
+            self?.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+}

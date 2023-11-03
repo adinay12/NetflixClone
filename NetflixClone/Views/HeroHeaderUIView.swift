@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import SDWebImage
 
 class HeroHeaderUIView: UIView {
     
@@ -32,6 +33,7 @@ class HeroHeaderUIView: UIView {
         let image = UIImageView()
         image.contentMode = .scaleAspectFill
         image.clipsToBounds = true
+        image.frame = bounds
         image.image = UIImage(named: "twilight")
         return image
     }()
@@ -70,5 +72,13 @@ class HeroHeaderUIView: UIView {
             make.bottom.equalToSuperview().offset(-60)
             make.width.equalTo(120)
         }
+    }
+    
+    public func configure(witch model: TitleViewModel) {
+        guard let url = URL(string: "https://image.tmdb.org/t/p/w500/\(model.posterUrl)") else {
+            return
+        }
+        
+        heroImageView.sd_setImage(with: url, completed: nil)
     }
 }
