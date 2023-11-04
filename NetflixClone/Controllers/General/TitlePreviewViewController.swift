@@ -33,7 +33,7 @@ class TitlePreviewViewController: UIViewController {
     
     private lazy var downloadButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = .gray
+        button.backgroundColor = .systemRed
         button.setTitle("Download", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 8
@@ -43,7 +43,7 @@ class TitlePreviewViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .systemGray3
         setupViews()
         setupConstraints()
     }

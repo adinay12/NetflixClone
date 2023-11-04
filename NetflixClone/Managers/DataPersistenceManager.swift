@@ -12,7 +12,9 @@ import CoreData
 class DataPersistenceManager {
     
     enum DataBaseError: Error {
-    case failedToSaveData
+        case failedToSaveData
+        case failedToFetchData
+        case failedToDeleteData
     }
     
     static let shared = DataPersistenceManager()
@@ -35,12 +37,46 @@ class DataPersistenceManager {
         item.vote_count = Int64(Double(model.vote_count))
         item.vote_average = model.vote_average
         
-        
         do {
             try contex.save()
             completion(.success(()))
         } catch {
             completion(.failure(DataBaseError.failedToSaveData))
+        }
+    }
+    
+    // MARK: - Функция Добавления
+    
+    func fetchingTitleFromDataBase(completion: @escaping( Result <[TitleItem], Error >) ->Void ) {
+        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let contex = appDelegate.persistentContainer.viewContext
+        
+        let request: NSFetchRequest<TitleItem>
+        request = TitleItem.fetchRequest()
+        
+        do {
+            let titles = try contex.fetch(request)
+            completion(.success(titles))
+        } catch {
+            completion(.failure(DataBaseError.failedToFetchData))
+        }
+    }
+    
+    // MARK: - Функция Удаление 
+    
+    func deleteTitleWich(model: TitleItem, completion: @escaping( Result <Void, Error >) ->Void ) {
+        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let contex = appDelegate.persistentContainer.viewContext
+        contex.delete(model )
+        
+        
+        do {
+            try contex.save()
+            completion(.success(()))
+        } catch {
+            completion(.failure(DataBaseError.failedToDeleteData))
         }
         
     }
