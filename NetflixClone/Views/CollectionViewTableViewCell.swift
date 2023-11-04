@@ -48,7 +48,11 @@ class CollectionViewTableViewCell: UITableViewCell {
         DispatchQueue.main.async { [ weak self ] in
             self?.collectionView.reloadData()
         }
-        
+    }
+    
+
+    private func downloadTitleAt(indexPath: IndexPath)  {
+    
     }
 }
 
@@ -56,12 +60,12 @@ class CollectionViewTableViewCell: UITableViewCell {
 
 extension CollectionViewTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
+        
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TitleCollectionViewCell.id, for: indexPath) as? TitleCollectionViewCell else { return UICollectionViewCell()
             
         }
         guard let model = titles[indexPath.row].poster_path else {
-          return  UICollectionViewCell()
+            return  UICollectionViewCell()
         }
         cell.configure(with: model )
         return cell
@@ -75,7 +79,7 @@ extension CollectionViewTableViewCell: UICollectionViewDelegate, UICollectionVie
         collectionView.deselectItem(at: indexPath, animated: true)
         
         let title = titles[indexPath.row ]
-        guard let titleName = title.original_title ?? title.orginal_name else { return 
+        guard let titleName = title.original_title ?? title.orginal_name else { return
         }
         
         APICaller.shared.getMovie(witch: titleName + " trailer") { [weak self] result in
@@ -97,5 +101,22 @@ extension CollectionViewTableViewCell: UICollectionViewDelegate, UICollectionVie
             }
             
         }
+    }
+    
+    
+    // MARK: - Добавление кнопки для каждого индивиидуального элемента размытия
+    
+    func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
+        
+        let config = UIContextMenuConfiguration(
+            identifier: nil,
+            previewProvider: nil) {[weak self] _ in
+                let downloadAction = UIAction(title: "Download", subtitle: nil, image: nil, identifier: nil, discoverabilityTitle: nil, state: .off) { _ in
+                    self?.downloadTitleAt(indexPath: indexPath)
+                }
+                return UIMenu(title: "", image: nil, identifier: nil, options: .displayInline, children: [downloadAction])
+            }
+        
+        return config
     }
 }
